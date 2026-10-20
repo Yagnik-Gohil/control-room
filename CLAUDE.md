@@ -27,11 +27,12 @@ Small, single-repo questions don't need a specialist: answer them directly.
 | `qa-engineer` | Running and writing tests, reproducing bugs, browser checks, accessibility, release QA |
 | `repo-scout` | Reading a repo and writing its `.local/repos/<repo>.md` context (used by `/init`) |
 
-Commands: `/init` links all sibling repos (context files, CLAUDE.md sections, guards) and refreshes stale context. `/preflight <repo>` runs QA and SEO in parallel and gives a go/no-go before a launch.
+Commands: `/init` links all sibling repos (context files, CLAUDE.md sections, guards) and refreshes stale context. `/preflight <repo>` runs QA and SEO in parallel and gives a go/no-go before a launch. `/commit [repo] [push]` makes commits and branches by `rules/git.md`.
 
 ## Rules for this desk
 
 @rules/core.md
+@rules/git.md
 
 - The owner runs every deploy. You may prepare it (build, checks, the exact command to run) and stop there.
 - **Generic vs private.** This repo is public. Anything specific to this machine or owner (domains, buckets, IDs, emails, paths) goes in `.local/`, never in tracked files here. When the owner changes a rule, decide which it is: a rule any workspace would want goes in `rules/` or an agent; a rule about this owner's setup goes in `.local/workspace.md`. Say which you picked.
@@ -44,7 +45,7 @@ Commands: `/init` links all sibling repos (context files, CLAUDE.md sections, gu
 control-room/
   CLAUDE.md               this playbook (public)
   .claude/agents/         specialist definitions (public)
-  .claude/skills/         /init, /preflight (public)
+  .claude/skills/         /init, /preflight, /commit (public)
   rules/                  imported by every linked repo (public)
   templates/              context file, CLAUDE.md section, workspace.md (public)
   .local/                 git-ignored: workspace.md, log.md, repos/<repo>.md

@@ -17,8 +17,9 @@ workspace/
 | `CLAUDE.md` | The manager's playbook: plan, delegate, verify, report, record |
 | `.claude/agents/` | `ui-engineer`, `backend-engineer`, `seo-specialist`, `qa-engineer`, `repo-scout` |
 | `/init` | First-time setup and re-sync: maps every sibling repo with `repo-scout`, then links its `CLAUDE.md` (generates one if missing, asks before changing one) |
+| `/commit [repo] [push]` | Commits by `rules/git.md`: branch naming, Conventional Commits, splits unrelated changes, screens out secrets and build output, pushes only when asked |
 | `/preflight <repo>` | QA and SEO audit in parallel, then a go/no-go before launch |
-| `rules/` | Shared rules imported live by every linked repo (`core.md`; `public-repo.md` for public repos) |
+| `rules/` | Shared rules imported live by every linked repo (`core.md`, `git.md`; `public-repo.md` for public repos) |
 
 ## Setup
 
@@ -48,7 +49,7 @@ The first time you open Claude Code **inside** a linked repo, it asks once to ap
 
 Each repo's `CLAUDE.md` ends with a marked section (`<!-- control-room:begin -->` ... `<!-- control-room:end -->`) that imports, by relative path:
 
-- `rules/core.md`, the shared rules;
+- `rules/core.md` and `rules/git.md`, the shared rules and git guidelines;
 - `rules/public-repo.md`, for public repos only;
 - `.local/repos/<repo>.md`, the repo's private context (hosting, deploy, indexing).
 

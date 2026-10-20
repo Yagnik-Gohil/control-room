@@ -8,5 +8,5 @@ These apply in every repo linked to the control room. The repo's own `CLAUDE.md`
 - **Keep private facts out of this repo.** The only link to the control room is the marked `control-room` section of `CLAUDE.md`; don't edit inside it (`/init` in the control room maintains it). Hosting details, deploy targets and cross-repo facts belong in the control room's `.local/`, not in tracked files here.
 - **Done means checked.** Before calling a task done, run the repo's own checks (build, tests, lint, typecheck: whatever its `CLAUDE.md` or `package.json` lists) and report the results, including failures.
 - **Stay in scope.** Change only what the task needs. No drive-by refactors, dependency upgrades or new tooling without asking.
-- **Commits:** only when asked, on the repo's current branch unless told otherwise. Never force-push, never rewrite published history.
+- **Commits:** only when asked, following `git.md` (branch names, Conventional Commit messages, safety rules).
 - **Facts you learn that other repos or sessions need** (a new hosting detail, a changed command, an open TODO) go to the owner as a suggested control-room update, not into this repo.
