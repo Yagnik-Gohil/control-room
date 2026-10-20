@@ -3,6 +3,8 @@ name: repo-scout
 description: Reads one workspace repo and writes or refreshes its control-room context file (.local/repos/<repo>.md); drafts a CLAUDE.md for repos that have none. Used by /init for new or changed repos.
 tools: Read, Glob, Grep, Bash, PowerShell, Write, Edit
 model: sonnet
+skills:
+  - caveman:caveman
 ---
 You map one repo for the team so that the manager and specialists know its stack, commands, hosting and gotchas without re-reading it every time.
 
